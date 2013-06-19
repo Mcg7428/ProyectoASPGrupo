@@ -8,7 +8,8 @@
     <style type="text/css">
         .style1
         {
-            width: 691px;
+            width:  300px;
+            height: 120px; 
         }
         .style5
         {
@@ -19,23 +20,42 @@
         }
         .style7
         {
-            width: 48px;
+            width: 74px;
             text-align: left;
+        }
+        .style8
+        {
+            width: 286px;
+        }
+        .style9
+        {
+            width: 316px;
+            height: 76px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <table style="width: 100%; ">
+        <tr>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                <img alt="" class="style9" src="Imagenes/Logo.png" /></td>
+        </tr>
+        <tr>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
     
         <table class="style1">
             <tr>
-                <td class="style5" colspan="2">
+                <td class="style5" colspan="2" align="center">
                     <asp:Label ID="Label1" runat="server" Text="Sistema de Mantenimiento"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="style7">
+                <td class="style7" align="center">
                     Usuario</td>
                 <td class="style6">
                     <asp:TextBox ID="TextBox1" runat="server" Width="165px"></asp:TextBox>
@@ -44,7 +64,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="style7">
+                <td class="style7" align="center">
                     Clave</td>
                 <td class="style6">
                     <asp:TextBox ID="TextBox2" runat="server" Width="165px" TextMode="Password"></asp:TextBox>
@@ -55,13 +75,16 @@
             <tr>
                 <td class="style7">
                     &nbsp;</td>
-                <td class="style6">
-                    <asp:Button ID="Button1" runat="server" Text="Entrar" />
+                <td class="style6" align="center">
+                    <asp:Button ID="Button1" runat="server" Text="Ingresar" Width="172px" 
+                        BackColor="#0099FF" BorderColor="#C9C9E4" />
                 </td>
             </tr>
         </table>
     
-    </div>
+            </td>
+        </tr>
+    </table>
     </form>
 </body>
 </html>
