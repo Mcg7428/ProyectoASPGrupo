@@ -25,6 +25,9 @@
         </td>
         <td class="style2" style="height: 22px; width: 195px">
             <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>Jefe</asp:ListItem>
+                <asp:ListItem>Tecnico</asp:ListItem>
+                <asp:ListItem Value="empleado"></asp:ListItem>
             </asp:DropDownList>
         </td>
         <td style="height: 22px">
@@ -34,8 +37,13 @@
         <td style="height: 22px; width: 112px">
             Departamento</td>
         <td class="style2" style="height: 22px; width: 195px">
-            <asp:DropDownList ID="DropDownList2" runat="server">
+            <asp:DropDownList ID="DropDownList2" runat="server" 
+                DataSourceID="SqlDataSource1" DataTextField="ID_DEPTO" 
+                DataValueField="ID_DEPTO">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [ID_DEPTO] FROM [Departamento]"></asp:SqlDataSource>
         </td>
         <td style="height: 22px">
             &nbsp;</td>
@@ -55,7 +63,7 @@
         <td style="height: 22px; width: 112px">
             Clave</td>
         <td class="style2" style="height: 22px; width: 195px">
-            <asp:TextBox ID="TextBox3" runat="server" Width="195px"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server" Width="195px" TextMode="Password"></asp:TextBox>
         </td>
         <td style="height: 22px">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
@@ -66,7 +74,7 @@
         <td style="height: 22px; width: 112px">
             Confirmar Clave</td>
         <td class="style2" style="height: 22px; width: 195px">
-            <asp:TextBox ID="TextBox4" runat="server" Width="195px"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" Width="195px" TextMode="Password"></asp:TextBox>
         </td>
         <td style="height: 22px">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
@@ -106,7 +114,8 @@
         </td>
         <td style="height: 22px">
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="TextBox7" ErrorMessage="*"></asp:RegularExpressionValidator>
+                ControlToValidate="TextBox7" ErrorMessage="*" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         </td>
     </tr>
     <tr>
@@ -122,10 +131,9 @@
         <td style="height: 22px; width: 112px">
             &nbsp;</td>
         <td class="style2" style="height: 22px; width: 195px">
-            ID Generado:</td>
+            &nbsp;</td>
         <td style="height: 22px">
-            <asp:Label ID="Label1" runat="server"></asp:Label>
-        </td>
+            &nbsp;</td>
     </tr>
 </table>
 </asp:Content>
