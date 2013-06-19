@@ -71,6 +71,9 @@
         <td style="height: 22px">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                 ControlToValidate="TextBox4" ErrorMessage="*"></asp:RequiredFieldValidator>
+        &nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server" 
+                ControlToCompare="TextBox3" ControlToValidate="TextBox4" 
+                ErrorMessage="Clave no coincide"></asp:CompareValidator>
         </td>
     </tr>
     <tr>
