@@ -1,0 +1,592 @@
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Control_Sesion]    Script Date: 06/18/2013 23:50:06 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Control_Sesion](
+	[ID_ENTRADA] [int] IDENTITY(1,1) NOT NULL,
+	[ID_USUARIO_RS] [varchar](10) NOT NULL,
+	[ID_CARGO_RS] [varchar](10) NOT NULL,
+	[ID_DEPTO_SALA_LAB] [varchar](10) NULL,
+	[FECHA_HORA] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID_ENTRADA] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+/*****************************************************************************************
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Edificio]    Script Date: 06/18/2013 23:50:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Edificio](
+	[ID_EDIFICIO] [varchar](10) NOT NULL,
+	[NOMBRE] [varchar](100) NULL,
+	[UBICACION] [varchar](max) NULL,
+	[DESCRIPCIO] [varchar](max) NULL,
+ CONSTRAINT [PK_Edificio] PRIMARY KEY CLUSTERED 
+(
+	[ID_EDIFICIO] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+/*****************************************************************************************
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Departamento]    Script Date: 06/18/2013 23:51:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Departamento](
+	[ID_DEPTO] [varchar](10) NOT NULL,
+	[ID_EDIFICIO_D] [varchar](10) NULL,
+	[NOMBRE_DEPTO] [nchar](10) NULL,
+ CONSTRAINT [PK_Departamento] PRIMARY KEY CLUSTERED 
+(
+	[ID_DEPTO] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Departamento]  WITH CHECK ADD  CONSTRAINT [FK_Departamento_Edificio] FOREIGN KEY([ID_EDIFICIO_D])
+REFERENCES [dbo].[Edificio] ([ID_EDIFICIO])
+GO
+
+ALTER TABLE [dbo].[Departamento] CHECK CONSTRAINT [FK_Departamento_Edificio]
+GO
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Laboratorio]    Script Date: 06/18/2013 23:51:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Laboratorio](
+	[ID_LAB] [varchar](10) NOT NULL,
+	[ID_DEPTO_L] [varchar](10) NOT NULL,
+	[NOMBRE_LABORATORIO] [nchar](10) NULL,
+ CONSTRAINT [PK_Laboratorio] PRIMARY KEY CLUSTERED 
+(
+	[ID_LAB] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Laboratorio]  WITH CHECK ADD  CONSTRAINT [FK_Laboratorio_Departamento] FOREIGN KEY([ID_DEPTO_L])
+REFERENCES [dbo].[Departamento] ([ID_DEPTO])
+GO
+
+ALTER TABLE [dbo].[Laboratorio] CHECK CONSTRAINT [FK_Laboratorio_Departamento]
+GO
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Sala]    Script Date: 06/18/2013 23:52:14 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Sala](
+	[ID_SALA] [varchar](10) NOT NULL,
+	[ID_DEPTO_S] [varchar](10) NULL,
+	[NOMBRE_SALA] [nchar](10) NULL,
+ CONSTRAINT [PK_Sala] PRIMARY KEY CLUSTERED 
+(
+	[ID_SALA] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Sala]  WITH CHECK ADD  CONSTRAINT [FK_Sala_Departamento] FOREIGN KEY([ID_DEPTO_S])
+REFERENCES [dbo].[Departamento] ([ID_DEPTO])
+GO
+
+ALTER TABLE [dbo].[Sala] CHECK CONSTRAINT [FK_Sala_Departamento]
+GO
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Equipos]    Script Date: 06/18/2013 23:52:57 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Equipos](
+	[ID_EQUIPO] [varchar](10) NOT NULL,
+	[DEPARTAMENTO] [varbinary](50) NOT NULL,
+	[NOMBRE_EQUIPO] [varbinary](50) NOT NULL,
+	[TIPO_EQUIPO] [varbinary](50) NOT NULL,
+	[FABRICANTE] [varchar](50) NOT NULL,
+	[ID_SAL_LAB] [varchar](10) NOT NULL,
+	[ESPECIFIC_TECNI] [varchar](100) NOT NULL,
+	[OBSERVACIONES] [varchar](max) NOT NULL,
+	[ESTADO] [nchar](10) NULL,
+ CONSTRAINT [PK_Equipos] PRIMARY KEY CLUSTERED 
+(
+	[ID_EQUIPO] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Mantenimiento]    Script Date: 06/18/2013 23:53:31 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Mantenimiento](
+	[ID_MANTENIMIENTO] [varchar](10) NOT NULL,
+	[NOMBRE] [varchar](10) NULL,
+	[NUM_TAREAS] [numeric](18, 0) NULL,
+ CONSTRAINT [PK_Mantenimiento] PRIMARY KEY CLUSTERED 
+(
+	[ID_MANTENIMIENTO] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Tarea]    Script Date: 06/19/2013 00:00:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Tarea](
+	[ID_TAREA] [varchar](10) NOT NULL,
+	[ID_MANTE_T] [varchar](10) NULL,
+	[NOMBRE_TAREA] [varchar](max) NULL,
+	[NUM_SUBTAR] [numeric](18, 0) NULL,
+ CONSTRAINT [PK_Tarea] PRIMARY KEY CLUSTERED 
+(
+	[ID_TAREA] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Tarea]  WITH CHECK ADD  CONSTRAINT [FK_Tarea_Mantenimiento] FOREIGN KEY([ID_MANTE_T])
+REFERENCES [dbo].[Mantenimiento] ([ID_MANTENIMIENTO])
+GO
+
+ALTER TABLE [dbo].[Tarea] CHECK CONSTRAINT [FK_Tarea_Mantenimiento]
+GO
+
+
+
+
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[SubTarea]    Script Date: 06/18/2013 23:59:57 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SubTarea](
+	[ID_SUBTAREA] [varchar](10) NOT NULL,
+	[ID_TAREA_ST] [varchar](10) NULL,
+	[DESCRIPCION] [varchar](max) NULL,
+ CONSTRAINT [PK_SubTarea] PRIMARY KEY CLUSTERED 
+(
+	[ID_SUBTAREA] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[SubTarea]  WITH CHECK ADD  CONSTRAINT [FK_SubTarea_Tarea] FOREIGN KEY([ID_TAREA_ST])
+REFERENCES [dbo].[Tarea] ([ID_TAREA])
+GO
+
+ALTER TABLE [dbo].[SubTarea] CHECK CONSTRAINT [FK_SubTarea_Tarea]
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[REGISTRO_MATENIMIENTO]    Script Date: 06/19/2013 00:01:34 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[REGISTRO_MATENIMIENTO](
+	[ID_REGISTRO_AVANCE] [varchar](10) NOT NULL,
+	[ID_MANT_R] [varchar](10) NOT NULL,
+	[ID_CREADOR_MANTE] [varchar](10) NOT NULL,
+	[ID_SALA_LAB_EQUIP] [varchar](10) NOT NULL,
+	[FECHA_INICIO] [date] NOT NULL,
+	[FECHA_FIN] [date] NOT NULL,
+	[ESTADO] [varchar](30) NOT NULL,
+	[ID_USER_AUTORIZA] [varchar](10) NOT NULL,
+	[PERSONAL_ASIGNADO] [varchar](max) NULL,
+	[OBSERVACIONES] [varchar](max) NULL,
+ CONSTRAINT [PK_REGISTRO_MATENIMIENTO] PRIMARY KEY CLUSTERED 
+(
+	[ID_REGISTRO_AVANCE] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Reg_Avan_Tarea]    Script Date: 06/18/2013 23:53:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Reg_Avan_Tarea](
+	[ID_AVAN_TAR] [varchar](10) NOT NULL,
+	[ID_AVAN_MANTE_T] [varchar](10) NOT NULL,
+	[FECHA_INICIO] [date] NOT NULL,
+	[FECHA_FIN] [date] NOT NULL,
+	[NUM_SUBTAREA] [numeric](18, 0) NOT NULL,
+	[SUBTAR_CUMPLIDAS] [numeric](18, 0) NOT NULL,
+	[ESTADO] [varchar](30) NOT NULL,
+ CONSTRAINT [PK_Reg_Avan_Tarea] PRIMARY KEY CLUSTERED 
+(
+	[ID_AVAN_TAR] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Reg_Avan_Tarea]  WITH CHECK ADD  CONSTRAINT [FK_Reg_Avan_Tarea_REGISTRO_MATENIMIENTO] FOREIGN KEY([ID_AVAN_MANTE_T])
+REFERENCES [dbo].[REGISTRO_MATENIMIENTO] ([ID_REGISTRO_AVANCE])
+GO
+
+ALTER TABLE [dbo].[Reg_Avan_Tarea] CHECK CONSTRAINT [FK_Reg_Avan_Tarea_REGISTRO_MATENIMIENTO]
+GO
+
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Registro_Avance_Subtarea]    Script Date: 06/18/2013 23:54:06 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Registro_Avance_Subtarea](
+	[ID_REG_AVAN_SUBTAR] [varchar](10) NOT NULL,
+	[ID_REG_TAR_ST] [varchar](10) NULL,
+	[FECHA_INICIO] [date] NULL,
+	[FECHA_FIN] [date] NULL,
+	[ESTADO] [varchar](50) NULL,
+ CONSTRAINT [PK_Registro_Avance_Subtarea] PRIMARY KEY CLUSTERED 
+(
+	[ID_REG_AVAN_SUBTAR] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Registro_Avance_Subtarea]  WITH CHECK ADD  CONSTRAINT [FK_Registro_Avance_Subtarea_Reg_Avan_Tarea] FOREIGN KEY([ID_REG_TAR_ST])
+REFERENCES [dbo].[Reg_Avan_Tarea] ([ID_AVAN_TAR])
+GO
+
+ALTER TABLE [dbo].[Registro_Avance_Subtarea] CHECK CONSTRAINT [FK_Registro_Avance_Subtarea_Reg_Avan_Tarea]
+GO
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[Tarea_Individual]    Script Date: 06/19/2013 00:04:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Tarea_Individual](
+	[ID_TAREA_IND] [varchar](10) NOT NULL,
+	[NOMBRE_TAREA_IDN] [varchar](max) NULL,
+	[NUM_SUBT_IND] [numeric](18, 0) NULL,
+ CONSTRAINT [PK_Tarea_Individual] PRIMARY KEY CLUSTERED 
+(
+	[ID_TAREA_IND] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[SubTarea_Individual]    Script Date: 06/19/2013 00:03:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SubTarea_Individual](
+	[ID_SUBTAREA_IND] [varchar](10) NOT NULL,
+	[ID_TAREA_STIND] [varchar](10) NULL,
+	[DESCRIPCION] [varchar](max) NULL,
+ CONSTRAINT [PK_SubTarea_Individual] PRIMARY KEY CLUSTERED 
+(
+	[ID_SUBTAREA_IND] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[SubTarea_Individual]  WITH CHECK ADD  CONSTRAINT [FK_SubTarea_Individual_Tarea_Individual] FOREIGN KEY([ID_TAREA_STIND])
+REFERENCES [dbo].[Tarea_Individual] ([ID_TAREA_IND])
+GO
+
+ALTER TABLE [dbo].[SubTarea_Individual] CHECK CONSTRAINT [FK_SubTarea_Individual_Tarea_Individual]
+GO
+
+
+
+
+
+
+
+
+
+
+USE [BD_MantenimientoASP]
+GO
+
+/****** Object:  Table [dbo].[SubTarea_Independiente]    Script Date: 06/19/2013 00:12:32 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SubTarea_Independiente](
+	[ID_SubTarea_Independ] [varchar](10) NULL,
+	[DESCRIPCION] [varchar](max) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
