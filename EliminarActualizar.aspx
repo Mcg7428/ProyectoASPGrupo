@@ -6,8 +6,13 @@
         <td>
             ID-USUARIO</td>
         <td>
-            <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="120px">
+            <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="120px" 
+                DataSourceID="SqlDataSource1" DataTextField="ID_USUARIO" 
+                DataValueField="ID_USUARIO">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [ID_USUARIO] FROM [Usuario]"></asp:SqlDataSource>
             <asp:Button ID="Button1" runat="server" Text="Buscar" />
         </td>
         <td>
@@ -39,6 +44,9 @@
         </td>
         <td>
             <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:ListItem>Jefe</asp:ListItem>
+                <asp:ListItem>Tecnico</asp:ListItem>
+                <asp:ListItem>Empleado</asp:ListItem>
             </asp:DropDownList>
         </td>
     </tr>
@@ -49,8 +57,13 @@
             <asp:TextBox ID="TextBox3" runat="server" Width="175px"></asp:TextBox>
         </td>
         <td style="height: 23px">
-            <asp:DropDownList ID="DropDownList3" runat="server">
+            <asp:DropDownList ID="DropDownList3" runat="server" 
+                DataSourceID="SqlDataSource2" DataTextField="ID_DEPTO" 
+                DataValueField="ID_DEPTO">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [ID_DEPTO] FROM [Departamento]"></asp:SqlDataSource>
         </td>
     </tr>
     <tr>
@@ -66,7 +79,7 @@
         <td style="height: 22px; width: 112px">
             Clave</td>
         <td class="style2" style="height: 22px; width: 195px">
-            <asp:TextBox ID="TextBox5" runat="server" Width="175px"></asp:TextBox>
+            <asp:TextBox ID="TextBox5" runat="server" Width="175px" TextMode="Password"></asp:TextBox>
         </td>
         <td>
             &nbsp;</td>
@@ -75,7 +88,7 @@
         <td style="height: 22px; width: 112px">
             Confirmar Clave</td>
         <td class="style2" style="height: 22px; width: 195px">
-            <asp:TextBox ID="TextBox6" runat="server" Width="175px"></asp:TextBox>
+            <asp:TextBox ID="TextBox6" runat="server" Width="175px" TextMode="Password"></asp:TextBox>
         </td>
         <td>
             &nbsp;</td>
