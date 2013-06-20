@@ -7,7 +7,7 @@ Partial Class AgregarUsuario
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
 
         Dim iduser As String
-        Dim numemp As String = "03" ''resolver sacar numero de base de dato anterior 
+        Dim numemp As String = "04" ''resolver sacar numero de base de dato anterior 
         iduser = DropDownList2.Text + numemp
 
         ''nos conectamos a la base de datos

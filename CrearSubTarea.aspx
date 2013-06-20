@@ -8,18 +8,6 @@
     </tr>
     <tr>
         <td class="style1" style="width: 110px">
-            Nombre</td>
-        <td style="width: 231px">
-            <asp:TextBox ID="TextBox3" runat="server" style="margin-right: 6px" 
-                Width="196px"></asp:TextBox>
-        </td>
-        <td>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                ControlToValidate="TextBox3" ErrorMessage="Nombre Requerido"></asp:RequiredFieldValidator>
-        </td>
-    </tr>
-    <tr>
-        <td class="style1" style="width: 110px">
             Descripcion</td>
         <td style="width: 231px">
             <asp:TextBox ID="TextBox4" runat="server" Height="19px" 
