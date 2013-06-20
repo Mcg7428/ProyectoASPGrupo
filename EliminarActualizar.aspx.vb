@@ -4,6 +4,7 @@ Imports System.Data
 Partial Class EliminarActualizar
     Inherits System.Web.UI.Page
     Public cn As SqlClient.SqlConnection
+    Dim cnn As New conexionSQLServer
 
     Private Property comandoSqlE As SqlCommand
 
@@ -41,6 +42,37 @@ Partial Class EliminarActualizar
         Next
 
         cn.Close()
+
+
+    End Sub
+
+    Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button2.Click
+
+
+
+        Dim numemp As String = "03" ''resolver sacar numero de base de dato anterior 
+
+
+        ''nos conectamos a la base de datos
+        cnn.conectar()
+
+
+        ''enviamos la consulta sql a la funcion si es correcta devuelve true y lanza mensaje "Registro almacenado"
+        If cnn.consulta(" update Usuario set ID_USUARIO='" & DropDownList1.Text & "', NOMBRE='" & TextBox1.Text & "',CARGO='" & DropDownList1.Text & "',DEPARTAMENTO = '" & DropDownList2.Text & "',USUARIO='" & TextBox4.Text & "', CLAVE='" & TextBox5.Text & "',PREGUNTA_SECRETA='" & TextBox7.Text & "',RESPUESTA_SECRETA='" & TextBox8.Text & "',EMAIL='" & TextBox9.Text & "' where ID_USUARIO='" & DropDownList1.Text & "'") Then
+            MsgBox("Registro Actualizado")
+            TextBox1.Text = Nothing
+            TextBox2.Text = Nothing
+            TextBox3.Text = Nothing
+            TextBox4.Text = Nothing
+            TextBox5.Text = Nothing
+            TextBox6.Text = Nothing
+            TextBox7.Text = Nothing
+            TextBox8.Text = Nothing
+            TextBox9.Text = Nothing
+            ''en caso de error la funcion consulta devuelve false y lanza mensaje "No se pudo almacenar el registro"
+        Else
+            MsgBox("No se pudo almacenar el registro")
+        End If
 
 
     End Sub
