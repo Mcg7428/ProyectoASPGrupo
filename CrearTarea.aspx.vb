@@ -33,6 +33,8 @@ Partial Class CrearTarea
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
 
+        'OBTENIENDO DATOS DE SUBTAREAS A AGREAGAR A TAREA
+
 
         'codigo para obtener id de trabajo
         ''Conexion a base de datos para extraccion de informacion
@@ -72,7 +74,7 @@ Partial Class CrearTarea
 
 
 
-
+        'OBTENIENDO DATOS DE LA TAREA QUE SE MODFICA
 
         If (ListBox1.SelectedIndex > -1) Then
             Dim subtar As String = ListBox1.SelectedItem.Text
@@ -103,14 +105,19 @@ Partial Class CrearTarea
                 subtar1 = FilaMpio1.Item("DESCRIPCION")
             Next
 
+
+
+            'AGREGANDO TAREAS INDIVIDUALES 
             cn.Close()
+
+
             Dim id_insertar As String = idt.ToString + idst.ToString
 
             cnn.conectar()
             ''enviamos la consulta sql a la funcion si es correcta devuelve true y lanza mensaje "Registro almacenado"
 
             If cnn.consulta("insert into SubTarea_Individual values('" & id_insertar & "','" & Val(idt) & "','" & subtar & "')") Then
-                MsgBox("Registro almacenado")
+
 
                 'en caso de error la funcion consulta devuelve false y lanza mensaje "No se pudo almacenar el registro"
             Else
@@ -118,12 +125,8 @@ Partial Class CrearTarea
             End If
 
 
-          
-
-
             cnn.conectar()
-
-
+            'ACTUALIZACION DE TAREAS ASIGNADAS
             ''enviamos la consulta sql a la funcion si es correcta devuelve true y lanza mensaje "Registro almacenado"
 
             numsubtar = numsubtar + 1
@@ -134,15 +137,11 @@ Partial Class CrearTarea
             Else
                 MsgBox("No se pudo almacenar el registro****")
             End If
-
-
             'mover al final
             ListBox1.Items.Remove(ListBox1.SelectedItem.Text)
             'mover al final
         Else
             MsgBox("selecciones subtarea")
         End If
-
-
     End Sub
 End Class

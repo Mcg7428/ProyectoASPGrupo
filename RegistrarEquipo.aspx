@@ -23,8 +23,13 @@
         <td class="style1" style="width: 125px">
             Departamento</td>
         <td colspan="2">
-            <asp:DropDownList ID="DropDownList4" runat="server">
+            <asp:DropDownList ID="DropDownList4" runat="server" 
+                DataSourceID="SqlDataSource1" DataTextField="ID_DEPTO" 
+                DataValueField="ID_DEPTO">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [ID_DEPTO] FROM [Departamento]"></asp:SqlDataSource>
         </td>
         <td>
             &nbsp;</td>
@@ -72,16 +77,24 @@
             </asp:RadioButtonList>
         </td>
         <td style="width: 140px">
-            <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="100px">
+            <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="100px" 
+                DataSourceID="SqlDataSource2" DataTextField="ID_SALA" DataValueField="ID_SALA">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [ID_SALA] FROM [Sala]"></asp:SqlDataSource>
         </td>
         <td rowspan="2">
             &nbsp;</td>
     </tr>
     <tr>
         <td style="width: 140px">
-            <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="100px">
+            <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="100px" 
+                DataSourceID="SqlDataSource3" DataTextField="ID_LAB" DataValueField="ID_LAB">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [ID_LAB] FROM [Laboratorio]"></asp:SqlDataSource>
         </td>
     </tr>
     <tr>
@@ -100,6 +113,9 @@
             Estado</td>
         <td colspan="2">
             <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:ListItem>Nuevo</asp:ListItem>
+                <asp:ListItem>Danado</asp:ListItem>
+                <asp:ListItem>Reparado</asp:ListItem>
             </asp:DropDownList>
         </td>
         <td>
