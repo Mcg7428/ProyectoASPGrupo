@@ -11,30 +11,6 @@
             &nbsp;</td>
     </tr>
     <tr>
-        <td class="style1" style="width: 125px">
-            Identificador</td>
-        <td colspan="2">
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        </td>
-        <td>
-            &nbsp;</td>
-    </tr>
-    <tr>
-        <td class="style1" style="width: 125px">
-            Departamento</td>
-        <td colspan="2">
-            <asp:DropDownList ID="DropDownList4" runat="server" 
-                DataSourceID="SqlDataSource1" DataTextField="ID_DEPTO" 
-                DataValueField="ID_DEPTO">
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
-                SelectCommand="SELECT [ID_DEPTO] FROM [Departamento]"></asp:SqlDataSource>
-        </td>
-        <td>
-            &nbsp;</td>
-    </tr>
-    <tr>
         <td class="style1" style="width: 125px; height: 25px">
             Nombre De Equipo</td>
         <td colspan="2" style="height: 25px">
@@ -42,19 +18,22 @@
         </td>
         <td style="height: 25px">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                ErrorMessage="Campo Requerido" ControlToValidate="TextBox3"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
         <td class="style1" style="width: 125px">
             Tipo de Equipo</td>
         <td colspan="2">
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="DropDownList5" runat="server">
+                <asp:ListItem>Impresora</asp:ListItem>
+                <asp:ListItem>Laptop</asp:ListItem>
+                <asp:ListItem>Escritorio</asp:ListItem>
+                <asp:ListItem>Perifericos</asp:ListItem>
+            </asp:DropDownList>
         </td>
         <td>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
-        </td>
+            &nbsp;</td>
     </tr>
     <tr>
         <td class="style1" style="width: 125px">
@@ -64,14 +43,14 @@
         </td>
         <td>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                ErrorMessage="Campo Requerido" ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
         <td class="style1" rowspan="2" style="width: 125px">
             Sala / Laboratorio de pertenencia</td>
         <td rowspan="2" style="width: 42px">
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="107px">
                 <asp:ListItem>Sala</asp:ListItem>
                 <asp:ListItem>Laboratorio</asp:ListItem>
             </asp:RadioButtonList>
@@ -105,7 +84,7 @@
         </td>
         <td>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                ErrorMessage="Campo Requerido" ControlToValidate="TextBox6"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -129,7 +108,7 @@
         </td>
         <td>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                ErrorMessage="Campo Requerido"></asp:RequiredFieldValidator>
+                ErrorMessage="Campo Requerido" ControlToValidate="TextBox7"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>

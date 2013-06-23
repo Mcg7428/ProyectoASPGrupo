@@ -16,6 +16,7 @@
         <td colspan="2">
             <asp:DropDownList ID="DropDownList5" runat="server">
             </asp:DropDownList>
+            <asp:Button ID="Button3" runat="server" Text="Buscar Equipo" />
         </td>
         <td>
             &nbsp;</td>
@@ -141,10 +142,10 @@
         <td class="style1" style="width: 125px">
             &nbsp;</td>
         <td colspan="2">
-            <asp:Button ID="Button1" runat="server" Text="Actualizar" />
+            <asp:Button ID="Button1" runat="server" Text="Actualizar" Enabled="False" />
         </td>
         <td>
-            <asp:Button ID="Button2" runat="server" Text="Eliminar" />
+            <asp:Button ID="Button2" runat="server" Text="Eliminar" Enabled="False" />
         </td>
     </tr>
 </table>
