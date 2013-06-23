@@ -10,7 +10,7 @@ Partial Class CrearSubTarea
 
 
         ''enviamos la consulta sql a la funcion si es correcta devuelve true y lanza mensaje "Registro almacenado"
-        If cnn.consulta("INSERT INTO SubTarea_Independiente values('" & TextBox4.Text & "')") Then
+        If cnn.consulta("INSERT INTO SubTarea_Independiente (DESCRIPCION) values('" & TextBox4.Text & "')") Then
             MsgBox("Registro almacenado")
 
             TextBox4.Text = Nothing
