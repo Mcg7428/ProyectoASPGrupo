@@ -49,13 +49,14 @@
                             <td class="style12">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp; &nbsp; <strong>
                                 <span class="style14" style="background-color: #999999">Username:</span></strong><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:TextBox ID="nombre" runat="server" Width="190px"></asp:TextBox>
+                                <asp:TextBox ID="nombre" runat="server" Width="190px" BackColor="#CCCCCC"></asp:TextBox>
 &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="nombre" 
                                     ErrorMessage="*"></asp:RequiredFieldValidator>
                                 <br />
                                 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span class="style14" 
                                     style="background-color: #999999">Password:</span></strong><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:TextBox ID="contrasna" runat="server" TextMode="Password" Width="191px"></asp:TextBox>
+                                <asp:TextBox ID="contrasna" runat="server" TextMode="Password" Width="191px" 
+                                    BackColor="#CCCCCC"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                     ControlToValidate="contrasna" ErrorMessage="*"></asp:RequiredFieldValidator>
                                 <br />
