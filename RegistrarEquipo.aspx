@@ -92,9 +92,9 @@
             Estado</td>
         <td colspan="2">
             <asp:DropDownList ID="DropDownList3" runat="server">
-                <asp:ListItem>Nuevo</asp:ListItem>
-                <asp:ListItem>Danado</asp:ListItem>
-                <asp:ListItem>Reparado</asp:ListItem>
+                <asp:ListItem>Bueno</asp:ListItem>
+                <asp:ListItem>Malo</asp:ListItem>
+                <asp:ListItem>Reparacion</asp:ListItem>
             </asp:DropDownList>
         </td>
         <td>
