@@ -74,10 +74,11 @@
             </tr>
             <tr>
                 <td class="style7">
-                    &nbsp;</td>
+                    <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
+                </td>
                 <td class="style6" align="center">
-                    <asp:Button ID="Button1" runat="server" Text="Ingresar" Width="172px" 
-                        BackColor="#0099FF" BorderColor="#C9C9E4" />
+                    <asp:ImageButton ID="ImageButton1" runat="server" Height="26px" 
+                        ImageUrl="~/Imagenes/loginbutton.png" Width="88px" />
                 </td>
             </tr>
         </table>
