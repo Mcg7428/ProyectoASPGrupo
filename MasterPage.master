@@ -23,25 +23,7 @@
     <table  width="100%" style=" margin: 0px;" bgcolor="Gray">
         <tr>
             <td height="100%" class="style1" align="center">
-                <asp:ImageButton ID="BUsuario" runat="server" Height="30px" style=" margin: 5px;"
-                    ImageUrl="~/Imagenes/Usuario.png" Width="30px" Enabled="False" 
-                    Visible="False" />
-                <br />
-                <asp:ImageButton ID="BMante" runat="server" Height="30px"  style=" margin: 5px;"
-                    ImageUrl="~/Imagenes/Mante.png" Width="30px" Enabled="False" 
-                    Visible="False" />
-                <br />
-                <asp:ImageButton ID="BEdificio" runat="server" Height="30px"  style=" margin: 5px;"
-                    ImageUrl="~/Imagenes/edificio.png" Width="30px" Enabled="False" 
-                    Visible="False" />
-                <br />
-                <asp:ImageButton ID="BEquipo" runat="server" Height="30px"  style=" margin: 5px;"
-                    ImageUrl="~/Imagenes/compu.png" Width="30px" Enabled="False" 
-                    Visible="False" />
-                <br />
-                <asp:ImageButton ID="BAdmin" runat="server" Enabled="False" Height="30px" style=" margin: 5px;"
-                    ImageUrl="~/Imagenes/admin.png" Visible="False" Width="30px" />
-               <a href="DefaultUsuarios.aspx"> <asp:Image ID="IUsuario" runat="server" 
+                <a href="DefaultUsuarios.aspx"> <asp:Image ID="IUsuario" runat="server" 
                     Height="30px"  style=" margin: 5px;"
                     ImageUrl="~/Imagenes/Usuario.png" Width="30px" Visible="False" /> </a>
                 <br />
