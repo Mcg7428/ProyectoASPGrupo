@@ -16,6 +16,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <div style="background-color: #666666;  width: 100%; Height: 50px; margin: 0px; ">
+        <asp:Image ID="Image1" runat="server" Height="46px" 
+            ImageUrl="~/Imagenes/Logo.png" Width="158px" />
+    </div>
     <table style="width: 100%;">
         <tr>
             <td class="style1">
