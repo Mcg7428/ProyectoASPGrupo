@@ -10,9 +10,9 @@ Partial Class _Default
 
 
 
-    Protected Sub ImageButton1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ImageButton1.Click ''Inicia secion y redireciona a la pagina principal O manda error 
+    Protected Sub ImageButton2_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ImageButton2.Click  ''Inicia secion y redireciona a la pagina principal O manda error 
         Dim obj As New conexionSQLServer ''Crea coneccion
-        Dim texto As String = "SELECT * FROM Usuario WHERE USUARIO = '" & TextBox1.Text & "' and CLAVE = '" & TextBox2.Text & "'" ''Consulta
+        Dim texto As String = "SELECT * FROM Usuario WHERE USUARIO = '" & nombre.Text & "' and CLAVE = '" & contrasna.Text & "'" ''Consulta
         obj.conectar() ''Se conecta 
         obj.Obtener(texto)  ''Realiza la coneccion
         If obj.Arreglo.HasRows = True Then ''hay algun usuario con lass carrecticas
@@ -28,9 +28,7 @@ Partial Class _Default
 
             Response.Redirect("~/DefaultMaster.aspx") ''enviar a pagina pirncipal
         Else
-            Label2.Text = "Error Intente de nuevo" ''envia el error
+            MError.Text = "Error Intente de nuevo" ''envia el error
         End If
-
     End Sub
-
 End Class
