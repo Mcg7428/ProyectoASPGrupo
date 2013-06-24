@@ -10,63 +10,64 @@
     <style type="text/css">
         .style1
         {
-            width: 85px;
+            width: 47px;
         }
-    </style>
+        </style>
 </head>
-<body>
+<body  style=" margin: 0px; ">
     <form id="form1" runat="server">
     <div style="background-color: #666666;  width: 100%; Height: 50px; margin: 0px; ">
         <asp:Image ID="Image1" runat="server" Height="46px" 
             ImageUrl="~/Imagenes/Logo.png" Width="158px" />
-    </div>
-    <table style="width: 100%;">
+    &nbsp;</div>
+    <table  width="100%" style=" margin: 0px;" bgcolor="Gray">
         <tr>
-            <td class="style1">
-                &nbsp;</td>
-            <td>
-                Sistema de Mantenimiento</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style1">
-                <asp:ImageButton ID="BUsuario" runat="server" Height="53px" 
-                    ImageUrl="~/Imagenes/Usuario.png" Width="60px" Enabled="False" 
+            <td height="100%" class="style1" align="center">
+                <asp:ImageButton ID="BUsuario" runat="server" Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/Usuario.png" Width="30px" Enabled="False" 
                     Visible="False" />
                 <br />
-                <asp:ImageButton ID="BMante" runat="server" Height="70px" 
-                    ImageUrl="~/Imagenes/Mante.png" Width="64px" Enabled="False" 
+                <asp:ImageButton ID="BMante" runat="server" Height="30px"  style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/Mante.png" Width="30px" Enabled="False" 
                     Visible="False" />
                 <br />
-                <asp:ImageButton ID="BEdificio" runat="server" Height="67px" 
-                    ImageUrl="~/Imagenes/edificio.png" Width="63px" Enabled="False" 
+                <asp:ImageButton ID="BEdificio" runat="server" Height="30px"  style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/edificio.png" Width="30px" Enabled="False" 
                     Visible="False" />
                 <br />
-                <asp:ImageButton ID="BEquipo" runat="server" Height="69px" 
-                    ImageUrl="~/Imagenes/compu.png" Width="68px" Enabled="False" 
+                <asp:ImageButton ID="BEquipo" runat="server" Height="30px"  style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/compu.png" Width="30px" Enabled="False" 
                     Visible="False" />
                 <br />
-                <asp:ImageButton ID="BAdmin" runat="server" Enabled="False" Height="61px" 
-                    ImageUrl="~/Imagenes/admin.png" Visible="False" Width="77px" />
+                <asp:ImageButton ID="BAdmin" runat="server" Enabled="False" Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/admin.png" Visible="False" Width="30px" />
+               <a href="DefaultUsuarios.aspx"> <asp:Image ID="IUsuario" runat="server" 
+                    Height="30px"  style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/Usuario.png" Width="30px" Visible="False" /> </a>
+                <br />
+                <a href="DefaultMantenimiento.aspx"><asp:Image ID="IMante" runat="server" 
+                    Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/Mante.png" Width="30px" Visible="False" /></a>
+                <br />
+                <a href="DefaultInmuebles.aspx"><asp:Image ID="IEdificio" runat="server" 
+                    Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/edificio.png" Width="30px" /></a>
+                <br />
+                <a href="DefaultEquipos.aspx"><asp:Image ID="IEquipo" runat="server" 
+                    Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/compu.png" Width="30px" Visible="False" /></a>
+                <br />
+                <asp:Image ID="IAdmin" runat="server" Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/admin.png" Width="30px" Visible="False" />
+               
             </td>
             <td>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
             </td>
-            <td>
-                &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style1">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-    </table>
+        </table>
     </form>
 </body>
 </html>
