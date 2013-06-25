@@ -10,42 +10,42 @@
     <style type="text/css">
         .style1
         {
-            width: 111px;
+            width: 47px;
         }
-    </style>
+        </style>
 </head>
-<body>
+<body  style=" margin: 0px; ">
     <form id="form1" runat="server">
-    <table style="width: 100%;">
+    <div style="background-color: #666666;  width: 100%; Height: 50px; margin: 0px; ">
+        <asp:Image ID="Image1" runat="server" Height="46px" 
+            ImageUrl="~/Imagenes/Logo.png" Width="158px" />
+    &nbsp;</div>
+    <table  width="100%" style=" margin: 0px;" bgcolor="Gray">
         <tr>
-            <td class="style1">
-                &nbsp;</td>
-            <td>
-                Sistema de Mantenimiento</td>
-        </tr>
-        <tr>
-            <td class="style1">
-                <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" 
-                    DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
-                    ForeColor="#7C6F57" StaticSubMenuIndent="10px">
-                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
-                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                    <DynamicMenuStyle BackColor="#F7F6F3" />
-                    <DynamicSelectedStyle BackColor="#5D7B9D" />
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/DefaultUsuarios.aspx" Text="Usuario" 
-                            Value="New Item"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/DefaultMantenimiento.aspx" Text="Mantenimiento" 
-                            Value="Mantenimiento"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/DefaultInmuebles.aspx" Text="Instlaciones" 
-                            Value="Instlaciones"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/DefaultEquipos.aspx" Text="Equipos" 
-                            Value="Equipos"></asp:MenuItem>
-                    </Items>
-                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
-                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                    <StaticSelectedStyle BackColor="#5D7B9D" />
-                </asp:Menu>
+            <td height="100%" class="style1" align="center">
+                <a href="DefaultUsuarios.aspx"> <asp:Image ID="IUsuario" runat="server" 
+                    Height="30px"  style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/Usuario.png" Width="30px" Visible="False" /> </a>
+                <br />
+                <a href="DefaultMantenimiento.aspx"><asp:Image ID="IMante" runat="server" 
+                    Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/Mante.png" Width="30px" Visible="False" /></a>
+                <br />
+                <a href="DefaultInmuebles.aspx">
+                <asp:Image ID="IEdificio" runat="server" 
+                    Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/edificio.png" Width="30px" Visible="False" /></a>
+                <br />
+                <a href="DefaultEquipos.aspx"><asp:Image ID="IEquipo" runat="server" 
+                    Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/compu.png" Width="30px" Visible="False" /></a>
+                <br />
+                <asp:Image ID="IAdmin" runat="server" Height="30px" style=" margin: 5px;"
+                    ImageUrl="~/Imagenes/admin.png" Width="30px" Visible="False" />
+               
+                <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False"  style=" margin: 5px;"
+                    Height="30px" ImageUrl="~/Imagenes/exit.png" Width="30px" />
+               
             </td>
             <td>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
@@ -53,13 +53,7 @@
         </asp:ContentPlaceHolder>
             </td>
         </tr>
-        <tr>
-            <td class="style1">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-    </table>
+        </table>
     </form>
 </body>
 </html>
