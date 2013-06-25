@@ -31,9 +31,10 @@
                     Height="30px" style=" margin: 5px;"
                     ImageUrl="~/Imagenes/Mante.png" Width="30px" Visible="False" /></a>
                 <br />
-                <a href="DefaultInmuebles.aspx"><asp:Image ID="IEdificio" runat="server" 
+                <a href="DefaultInmuebles.aspx">
+                <asp:Image ID="IEdificio" runat="server" 
                     Height="30px" style=" margin: 5px;"
-                    ImageUrl="~/Imagenes/edificio.png" Width="30px" /></a>
+                    ImageUrl="~/Imagenes/edificio.png" Width="30px" Visible="False" /></a>
                 <br />
                 <a href="DefaultEquipos.aspx"><asp:Image ID="IEquipo" runat="server" 
                     Height="30px" style=" margin: 5px;"
@@ -41,6 +42,9 @@
                 <br />
                 <asp:Image ID="IAdmin" runat="server" Height="30px" style=" margin: 5px;"
                     ImageUrl="~/Imagenes/admin.png" Width="30px" Visible="False" />
+               
+                <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False"  style=" margin: 5px;"
+                    Height="30px" ImageUrl="~/Imagenes/exit.png" Width="30px" />
                
             </td>
             <td>
