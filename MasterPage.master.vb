@@ -29,6 +29,8 @@ Partial Class MasterPage
 
     Protected Sub ImageButton1_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ImageButton1.Click
         Session("Conectado") = "No"
+        Session.Clear()
+        Session.Abandon()
         Response.Redirect("~/Default.aspx")
     End Sub
 End Class
