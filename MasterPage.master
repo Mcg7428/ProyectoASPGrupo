@@ -41,6 +41,9 @@
                             Value="Instlaciones"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/DefaultEquipos.aspx" Text="Equipos" 
                             Value="Equipos"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/DefaultRegManteAsigna.aspx" 
+                            Text="Resgitro Mantenimientos" Value="Resgitro Mantenimientos">
+                        </asp:MenuItem>
                     </Items>
                     <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
