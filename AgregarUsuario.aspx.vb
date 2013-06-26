@@ -4,7 +4,6 @@ Imports System.Data
 Partial Class AgregarUsuario
     Inherits System.Web.UI.Page
     Dim cnn As New conexionSQLServer
-
     Public cn As SqlClient.SqlConnection
     Private Property comandoSqlE As SqlCommand
 

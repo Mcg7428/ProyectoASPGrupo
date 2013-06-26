@@ -13,9 +13,7 @@
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </td>
         <td>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="TextBox1" ErrorMessage="Error  Formato ID" 
-                ValidationExpression="[A-Z]{2}[-][0-9]{3}"></asp:RegularExpressionValidator>
+            <asp:Button ID="Button2" runat="server" Text="Registrar Id " />
         </td>
     </tr>
     <tr>
@@ -42,7 +40,13 @@
         <td style="width: 152px; height: 77px">
             &nbsp;</td>
         <td style="width: 151px; height: 77px">
-            <asp:ListBox ID="ListBox1" runat="server" Width="142px"></asp:ListBox>
+            <asp:ListBox ID="ListBox1" runat="server" Width="142px" 
+                DataSourceID="SqlDataSource1" DataTextField="NOMBRE_TAREA_IDN" 
+                DataValueField="NOMBRE_TAREA_IDN"></asp:ListBox>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
+                SelectCommand="SELECT [NOMBRE_TAREA_IDN] FROM [Tarea_Individual]">
+            </asp:SqlDataSource>
         </td>
         <td style="height: 77px">
             <asp:ListBox ID="ListBox2" runat="server" Width="146px"></asp:ListBox>
