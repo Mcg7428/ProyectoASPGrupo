@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MPMantenimiento.master" AutoEventWireup="false" CodeFile="CrearMantenimiento.aspx.vb" Inherits="CrearMantenimiento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder12" Runat="Server">
-    <table style="width:100%;">
+    <table style="width:100%;" bgcolor="Silver">
     <tr>
         <td colspan="3">
             Crear Mantenimiento</td>
@@ -10,7 +10,7 @@
         <td style="width: 152px">
             ID_Mantenimiento</td>
         <td style="width: 151px">
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" BackColor="Silver"></asp:TextBox>
         </td>
         <td>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
@@ -22,7 +22,7 @@
         <td style="width: 152px">
             Nombre Mantenimiento</td>
         <td style="width: 151px">
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" BackColor="Silver"></asp:TextBox>
         </td>
         <td>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -42,17 +42,18 @@
         <td style="width: 152px; height: 77px">
             &nbsp;</td>
         <td style="width: 151px; height: 77px">
-            <asp:ListBox ID="ListBox1" runat="server" Width="142px"></asp:ListBox>
+            <asp:ListBox ID="ListBox1" runat="server" Width="142px" BackColor="Silver"></asp:ListBox>
         </td>
         <td style="height: 77px">
-            <asp:ListBox ID="ListBox2" runat="server" Width="146px"></asp:ListBox>
+            <asp:ListBox ID="ListBox2" runat="server" Width="146px" BackColor="Silver"></asp:ListBox>
         </td>
     </tr>
     <tr>
         <td style="width: 152px">
             &nbsp;</td>
         <td style="width: 151px">
-            <asp:Button ID="Button1" runat="server" Text="Agregar Tarea" />
+            <asp:Button ID="Button1" runat="server" Text="Agregar Tarea" BackColor="Silver" 
+                BorderColor="Silver" />
         </td>
         <td>
             &nbsp;</td>
