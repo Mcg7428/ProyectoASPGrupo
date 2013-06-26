@@ -14,7 +14,7 @@
         }
         </style>
 </head>
-<body  style=" margin: 0px; ">
+<body  style=" margin: 0px; " bgcolor="Gray">
     <form id="form1" runat="server">
     <div style="background-color: #666666;  width: 100%; Height: 50px; margin: 0px; ">
         <asp:Image ID="Image1" runat="server" Height="46px" 
