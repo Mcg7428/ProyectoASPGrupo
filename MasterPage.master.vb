@@ -19,7 +19,6 @@ Partial Class MasterPage
             IEdificio.Visible = True
             IAdmin.Visible = True
             IUsuario.Visible = True
-            IUsuario.Visible = True
             IEquipo.Visible = True
             IMante.Visible = True
         Else
