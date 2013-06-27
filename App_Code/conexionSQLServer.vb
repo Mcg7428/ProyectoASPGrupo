@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic
 Imports System.Data
+Imports System
 
 Public Class conexionSQLServer
     ''creamos el objeto de conexion
