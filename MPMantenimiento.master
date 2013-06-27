@@ -32,6 +32,8 @@
                             Value="Crear Tarea"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/CrearSubTarea.aspx" Text="Crear SubTarea" 
                             Value="Crear SubTarea"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/VerMantenimientos.aspx" Text="Ver Mantenimientos" 
+                            Value="Ver Mantenimientos"></asp:MenuItem>
                     </Items>
                     <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
