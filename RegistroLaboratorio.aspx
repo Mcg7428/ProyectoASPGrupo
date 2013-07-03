@@ -15,7 +15,7 @@
         <td>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                 ControlToValidate="TextBox3" ErrorMessage="Fromato Incorrecto" 
-                ValidationExpression="[LA][0-9]{1,3}"></asp:RegularExpressionValidator>
+                ValidationExpression="[LA]{2}[0-9]{1,3}"></asp:RegularExpressionValidator>
         </td>
     </tr>
     <tr>

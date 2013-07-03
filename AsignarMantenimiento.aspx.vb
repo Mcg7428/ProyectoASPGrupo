@@ -98,9 +98,11 @@ Partial Class AsignarMantenimiento
         '' insertango registro global
         Dim numid As Integer = numcor + 1
 
+
+
         cnn.conectar()
         If cnn.consulta("INSERT INTO REGISTRO_MATENIMIENTO VALUES ('" & Idmante + Convert.ToString(numid) & "','" & Idmante & "','" & IdUser & "','" & idbusqueda & "','" & fechaini & "','" & fechafinal & "','" & estado & "','" & idAutoriaza & "','" & personal & "','" & observaciones & "','" & Convert.ToString(numtar) & "','0','" & Convert.ToString(numid) & "')") Then
-            'MsgBox("Registro almacenado")
+            MsgBox("Registro almacenado")
             ''en caso de error la funcion consulta devuelve false y lanza mensaje "No se pudo almacenar el registro"
         Else
             MsgBox("No se pudo almacenar el registro")
@@ -135,10 +137,10 @@ Partial Class AsignarMantenimiento
 
 
             'bloque subtareas
-
+            cn1 = New SqlClient.SqlConnection() ''inicializamos el objeto conexion
             cn1.ConnectionString = "Server=ATHENA64; database=BD_MantenimientoASP; trusted_connection=yes" '' cambiar el servidor para comite a   Server=ATHENA64
             cn1.Open() ''con ela funcion open abrimos la conexion
-            Dim consulta3 As String = "select * from SubTarea where ID_TAREA_ST = 'BR037'" ''consulta a la base de datos
+            Dim consulta3 As String = "select * from SubTarea where ID_TAREA_ST = '" & idtarproc & "'" ''consulta a la base de datos
             comandoSqlE3 = New SqlClient.SqlCommand(consulta3, cn) '' creando objeto consulta a la base de datos con objeto conexio
             Dim da3 As SqlDataAdapter = New SqlDataAdapter(comandoSqlE3) 'CREANDO ADAPTER 
             Dim ds3 As DataSet   'CREANDO DATA SETE 
@@ -147,7 +149,7 @@ Partial Class AsignarMantenimiento
             da3.Fill(ds3.Tables("SubTarea"))  'LLENANDO DATOS DE TABLA
             Dim oTabla3 As DataTable        ''=OBJETO TABLA PARA GUARDAR DATOS 
             oTabla3 = ds3.Tables("SubTarea")  'LLENADO DE LA TABLA
-            Dim IdSubtar As Integer
+            Dim IdSubtar As String
             Dim FilaMpio3 As DataRow
             Dim contaSubtar As Integer = 1
             For Each FilaMpio3 In oTabla3.Rows
