@@ -7,7 +7,7 @@ Partial Class CrearMantenimiento
     Public cn As SqlClient.SqlConnection
     Private Property comandoSqlE As SqlCommand
 
-    Private Property comandoSqlE1 As SqlCommand
+    Private Property comandoSqlE1 As SqlCommand '' cadena extra para 
 
     Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button2.Click
 

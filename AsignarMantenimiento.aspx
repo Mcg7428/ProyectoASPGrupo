@@ -48,7 +48,7 @@
         <td style="width: 82px" class="style2" rowspan="3">
             <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                 <asp:ListItem>Sala</asp:ListItem>
-                <asp:ListItem>Labortorio</asp:ListItem>
+                <asp:ListItem>Laboratorio</asp:ListItem>
                 <asp:ListItem>Equipo</asp:ListItem>
             </asp:RadioButtonList>
         </td>
@@ -145,7 +145,7 @@
             </asp:DropDownList>
         </td>
         <td style="width: 65px; height: 25px">
-            </td>
+            &nbsp;</td>
     </tr>
     <tr>
         <td style="width: 164px">
@@ -153,7 +153,7 @@
         <td colspan="2">
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                ControlToValidate="RadioButtonList1" ErrorMessage="Rquerido"></asp:RequiredFieldValidator>
+                ControlToValidate="TextBox1" ErrorMessage="Rquerido"></asp:RequiredFieldValidator>
         </td>
         <td style="width: 65px">
             &nbsp;</td>

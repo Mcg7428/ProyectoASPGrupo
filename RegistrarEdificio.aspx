@@ -17,7 +17,10 @@
                 <asp:TextBox ID="TextBox1" runat="server" Width="170px"></asp:TextBox>
             </td>
             <td style="height: 20px">
-                &nbsp;</td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="TextBox1" ErrorMessage="Fromato Incorrecto" 
+                    ValidationExpression="[A-Z]{2}[0-9]{1,3}"></asp:RegularExpressionValidator>
+            </td>
         </tr>
         <tr>
             <td style="width: 142px">
