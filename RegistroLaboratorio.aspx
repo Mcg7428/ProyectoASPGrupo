@@ -13,10 +13,7 @@
             <asp:TextBox ID="TextBox3" runat="server" Height="23px" Width="176px"></asp:TextBox>
         </td>
         <td>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="TextBox3" ErrorMessage="Fromato Incorrecto" 
-                ValidationExpression="[LA]{2}[0-9]{1,3}"></asp:RegularExpressionValidator>
-        </td>
+            &nbsp;</td>
     </tr>
     <tr>
         <td class="style1" style="width: 100px">
@@ -33,13 +30,8 @@
         <td class="style1" style="width: 100px">
                 Departamento</td>
         <td style="width: 192px">
-            <asp:DropDownList ID="DropDownList1" runat="server" 
-                DataSourceID="SqlDataSource1" DataTextField="ID_DEPTO" 
-                DataValueField="ID_DEPTO">
+            <asp:DropDownList ID="DropDownList1" runat="server">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:BD_MantenimientoASPConnectionString %>" 
-                SelectCommand="SELECT [ID_DEPTO] FROM [Departamento]"></asp:SqlDataSource>
         </td>
         <td>
                 &nbsp;</td>
